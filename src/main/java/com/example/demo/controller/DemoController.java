@@ -5,10 +5,8 @@ import com.example.demo.service.DemoService;
 import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,11 +25,19 @@ public class DemoController {
         PageHelper.startPage(page,2);
         return demoService.likeName(name);
     }
-    @PostMapping("/save")
+    @PostMapping("/saveApi")
     @ApiOperation(value="新增日志",tags = {"日志"})
-    public Demo save(@RequestBody Demo demo){
-        demo.setName("bbb");
+    public Demo saveApi(@RequestBody Demo demo){
+        demo.setCat_name("bbb");
         demoService.save(demo);
+        return demo;
+    }
+    @RequestMapping("/save")
+    @Transactional
+    public Demo save(Demo demo){
+        demo.setCat_name("bbb");
+        demoService.save(demo);
+        int a = 1/0;
         return demo;
     }
 
