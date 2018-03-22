@@ -33,5 +33,9 @@ public class TemplateController {
     public String contact() {
         return "contact";
     }
+    @RequestMapping("/index2")
+    public String index2() {
+        return "page/index";
+    }
 
 }
