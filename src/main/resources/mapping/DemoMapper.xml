@@ -7,9 +7,8 @@
         select * from cat
 
     </select>
-    <!--<insert id="save" >
-
-
-    </insert>-->
+    <insert id="save" parameterType="com.example.demo.model.Demo">
+      insert into cat(cat_name) values(#{cat_name})
+    </insert>
 
 </mapper>

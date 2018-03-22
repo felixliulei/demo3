@@ -115,5 +115,30 @@
 			<version>2.7.0</version>
 		</dependency>
 	</dependencies>
+	<build>
+
+		<!-- 打成jar包的名称 -->
+
+		<finalName>felix</finalName>
+
+		<plugins>
+
+			<!-- 需要引用的jar包 -->
+
+			<plugin>
+
+				<groupId>org.springframework.boot</groupId>
+
+				<artifactId>spring-boot-maven-plugin</artifactId>
+
+			</plugin>
+
+		</plugins>
+
+
+
+		<!-- <finalName>gateway</finalName> -->
+
+	</build>
 
 </project>
