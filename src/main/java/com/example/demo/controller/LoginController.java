@@ -10,6 +10,18 @@ public class LoginController {
     @RequestMapping("")
     public String login() {
 
-        return "login";
+        return "page/login";
     }
+    @RequestMapping("carLogin")
+    public String carLogin() {
+
+        return "page/carmanagement/login";
+    }
+    @RequestMapping("/carManagement")
+    public String carManagement() {
+
+        return "page/carmanagement/index";
+    }
+
+
 }
