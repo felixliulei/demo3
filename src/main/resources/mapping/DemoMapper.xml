@@ -7,6 +7,11 @@
         select * from cat
 
     </select>
+    <select id="likeName" resultType="java.util.Map">
+
+        select * from cat WHERE cat_name=#{cat_name}
+
+    </select>
     <insert id="save" parameterType="com.example.demo.model.Demo">
       insert into cat(cat_name) values(#{cat_name})
     </insert>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserManagerMapper">
+
+    <select id="checLogin" parameterType="com.example.demo.model.UserManager" resultType="com.example.demo.model.UserManager">
+
+        select * from user_manager
+        WHERE  1=1
+        <if test="loginId !=null and loginId!=''">
+          AND login_id=#{loginId}
+        </if>
+        <if test="password !=null and password!=''">
+            AND password=#{password}
+        </if>
+
+    </select>
+
+
+</mapper>
